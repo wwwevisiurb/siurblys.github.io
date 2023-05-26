@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First Website</title>
+  <style>
+    body {
+      background-color: #F0EAD6; /* Eggshell color background */
+      font-family: "Comic Sans MS", cursive; /* Comic Sans font */
+      text-align: center; /* Center-align the content */
+      color: red; /* Set the text color to red */
+    }
+
+    /* CSS styles for the rotating picture */
+    #rotatingPicture {
+      transform-style: preserve-3d;
+      animation: none; /* Initially, disable the animation */
+    }
+
+    #rotatingPicture.rotating {
+      animation: rotate 10s linear infinite; /* Apply the animation when the "rotating" class is added */
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotateY(0deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+
+    #quittablePicture {
+      display: none; /* Initially hide the quittable picture */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    #quittablePicture.show {
+      display: block; /* Show the quittable picture after 10 seconds */
+    }
+
+    #quittablePicture2 {
+      display: none; /* Initially hide the quittable picture 2 */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    #quittablePicture2.show {
+      display: block; /* Show the quittable picture 2 after 30 seconds */
+    }
+
+    #closeButton2 {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>jus lankotes tinklalapyje WWW.EVISIURB.LT</h1>
+  <p>skambutis siuo metu investicija i kripotovaliutas jusu namuose prekyba saurma pagegiu rajone.</p>
+
+  <img id="rotatingPicture" src="skambutisdabar.png" alt="Rotating Picture">
+
+  <audio id="myAudio" src="sviestas.mp3" autoplay loop></audio>
+
+  <div id="quittablePicture">
+    <img src="windowdefender.png" alt="Quittable Picture">
+  </div>
+
+  <div id="quittablePicture2">
+    <a id="linkToOpen" href="https://evisiurb.wixsite.com/q1c40soerb0yd-onion" target="_blank">
+      <img src="taupizda.png" alt="Quittable Picture 2">
+    </a>
+    <span id="closeButton2">&times;</span>
+  </div>
+
+  <script>
+    // JavaScript code for handling the click event
+    const rotatingPicture = document.getElementById('rotatingPicture');
+    const audio = document.getElementById('myAudio');
+    const quittablePicture2 = document.getElementById('quittablePicture2');
+    const closeButton2 = document.getElementById('closeButton2');
+
+    rotatingPicture.addEventListener('click', function() {
+      rotatingPicture.classList.add('rotating'); // Add the "rotating" class to start the rotation
+      audio.play(); // Start playing the audio
+    });
+
+    setTimeout(function() {
+      quittablePicture.classList.add('show'); // Show the quittable picture after 10 seconds
+    }, 130000);
+
+    setTimeout(function() {
+      quittablePicture2.classList.add('show'); // Show the quittable picture 2 after 30 seconds
+    }, 140000);
+
+    closeButton2.addEventListener('click', function() {
+      window.open(linkToOpen.href, '_blank'); // Open the link in a new tab
+    });
+  </script>
+</body>
+</html>
+
+
+

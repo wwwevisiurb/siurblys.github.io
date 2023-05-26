@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Pop-up Picture</title>
+  <style>
+    /* CSS styles for the pop-up and other elements */
+  </style>
+</head>
+<body>
+  <img id="popUpPicture" src="skambutisdabar.png" alt="Pop-up Picture">
+
+  <!-- Add the audio element inside the pop-up -->
+  <div id="popUp">
+    <audio id="myAudio" src="Recording_7.mp3" loop></audio>
+  </div>
+
+  <script>
+    // JavaScript code for handling the click event
+    const popUpPicture = document.getElementById('popUpPicture');
+    const audio = document.getElementById('myAudio');
+
+    popUpPicture.addEventListener('click', function() {
+      audio.play();
+    });
+  </script>
+</body>
+</html>
